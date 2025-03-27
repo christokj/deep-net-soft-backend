@@ -7,10 +7,8 @@ const apiRouter = require("./routes");
 dotenv.config();
 const app = express();
 
-
 const corsOptions = {
-    origin: process.env.CLIENT_DOMAIN,
-    methods: "GET,POST,PUT,DELETE",
+    origin: [process.env.CLIENT_DOMAIN],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true, // Allow credentials (cookies, etc.)
     optionSuccessStatus: 200, // Success status for older browsers (IE11, etc.)
